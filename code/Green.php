@@ -40,7 +40,7 @@ class Green extends Object
     {
 		if(!self::config()->public_access) return;
 
-		$routes = Config::inst()->get('Director','routes');
+		$routes = Config::inst()->get('Director','rules');
 		foreach(self::inst()->getDesignModules() as $module) {
 			$route = (string) $module->getConfiguration()->public_url;
 			if($route) {
