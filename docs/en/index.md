@@ -1,3 +1,18 @@
+## A feast of delicious anti-pattnerns.
+
+This module aims to solve an all-too familiar problem in SilverStripe: _the parity of page types and templates_. In doing so, it challenges many common conventions. 
+
+Conventionally, every unique template requires:
+
+* The creation of at least one PHP file
+* Two PHP classes
+* A database schema alteration
+* At least one database record mutation
+
+This amount of overhead and clutter is well worth the investment for page types that do anything beyond present content, but for page types that are simply containers for a design, this is a lot of extra effort and adds a lot of bloat. Over time, the codebase and the CMS UI become polluted with one-off page types that were created for God-knows-what back in God-knows-when for God-knows-what reason.
+
+Yes, these are anti-patterns, but in many contexts, the conventional approach _invites_ them.
+
 ## Getting started
 There are just two things you need to get started -- a single page type, and any number of design modules.
 
