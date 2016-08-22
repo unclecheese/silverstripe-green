@@ -93,15 +93,15 @@ Select from one of the design modules you've created.
 
 If the module has its own content file, it will tell you so.
 
-![screenshot1](screenshot1.png?raw=true)
+![screenshot1](../screenshot1.png?raw=true)
 
 Otherwise, you'll be prompted to create some data.
 
-![screenshot1](screenshot2.png?raw=true)
+![screenshot1](../screenshot2.png?raw=true)
 
 That's it!
 
-![screenshot1](screenshot3.png?raw=true)
+![screenshot1](../screenshot3.png?raw=true)
 
 ## What about casting?
 

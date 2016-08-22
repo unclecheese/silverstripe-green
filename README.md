@@ -1,3 +1,5 @@
+![green](docs/green.png?raw=true)
+
 # SilverStripe Green
 
 We're consuming way too many page types. Stop the pollution, clean up the litter, and save a site tree.
@@ -7,6 +9,13 @@ Go green.
 ## Hippie!
 
 *SilverStripe Green is a micro-framework that offers a design-driven approach to creating page templates that need rapid prototyping and/or rarely change.* Instead of creating new page types every time you need a new design, you can create a self-contained design that supplies its own template, CSS and a serialised content structures in the form of YAML or JSON. These are called *design modules*.
+
+## Installation
+`composer require unclecheese/silverstripe-green`
+
+## Dependencies
+* [unclecheese/silverstripe-serialised-dbfields](http://github.com/unclecheese/silverstripe-serialised-db-fields)
+* SilverStripe >= 3.1
 
 ## A feast of delicious anti-pattnerns.
 
@@ -26,13 +35,6 @@ Yes, these are anti-patterns, but in many contexts, the conventional approach _i
 ## Sound interesting?
 
 [Read the docs](docs/en/index.md). They're eco-friendly!
-
-## Installation
-`composer require unclecheese/silverstripe-green`
-
-## Dependencies
-* [unclecheese/silverstripe-serialised-dbfields](http://github.com/unclecheese/silverstripe-serialised-db-fields)
-* SilverStripe >= 3.1
 
 ## Tests
 `framework sake dev/tests/GreenTest`
