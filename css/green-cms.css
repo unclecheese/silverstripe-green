@@ -1,0 +1,4 @@
+#Form_EditForm_TemplateData_Holder .codeeditor-button-bar { display:none; }
+#Form_EditForm_TemplateData_Holder .ace_editor { max-width:100%; }
+#Form_EditForm_TemplateData_Holder label { float:none; width:100%;}
+#Form_EditForm_TemplateData_Holder .middleColumn { margin-left:0; }

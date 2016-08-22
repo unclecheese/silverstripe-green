@@ -1,0 +1,15 @@
+---
+Name: green
+---
+UncleCheese\Green\Green:
+  default_data_type: YAML
+  design_folder: '$ThemeDir'
+  public_access: false
+Injector:
+  GreenFinder:
+    class: Symfony\Component\Finder\Finder
+LeftAndMain:
+  extra_requirements_javascript:
+    - silverstripe-green/javascript/green-cms.js
+  extra_requirements_css:
+    - silverstripe-green/css/green-cms.css
