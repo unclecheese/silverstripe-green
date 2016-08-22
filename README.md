@@ -8,7 +8,7 @@ Go green.
 
 ## Hippie!
 
-*SilverStripe Green is a micro-framework that offers a design-driven approach to creating page templates that need rapid prototyping and/or rarely change.* Instead of creating new page types every time you need a new design, you can create a self-contained design that supplies its own template, CSS and a serialised content structures in the form of YAML or JSON. These are called *design modules*.
+**SilverStripe Green is a micro-framework that offers a design-driven approach to creating page templates that need rapid prototyping and/or rarely change.** Instead of creating new page types every time you need a new design, you can create a self-contained design that supplies its own template, CSS and a serialised content structures in the form of YAML or JSON. These are called **design modules**.
 
 ## Sound interesting?
 
