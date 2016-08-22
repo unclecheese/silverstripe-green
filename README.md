@@ -1,4 +1,4 @@
-![green](docs/green.png?raw=true)
+<div style="text-align:center;"><img src="docs/green.png?raw=true" style="height:256px" /></div>
 
 # SilverStripe Green
 
