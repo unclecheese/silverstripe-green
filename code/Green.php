@@ -40,16 +40,19 @@ class Green extends Object
     {
 		if(!self::config()->public_access) return;
 
-		$routes = Config::inst()->get('Director','rules');
+		$currentRoutes = Config::inst()->get('Director','rules');
+		$newRoutes = [];
+
 		foreach(self::inst()->getDesignModules() as $module) {
 			$route = (string) $module->getConfiguration()->public_url;
 			if($route) {
-				$routes[$route] = 'UncleCheese\Green\Controller';
+				$newRoutes[$route] = 'UncleCheese\Green\Controller';
 			}		
 		}
-
+		$routes = array_merge($newRoutes, $currentRoutes);
+		
 		Config::inst()->update('Director', 'rules', $routes);
-
+		
     }
 
 

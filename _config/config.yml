@@ -3,7 +3,7 @@ Name: green
 ---
 UncleCheese\Green\Green:
   default_data_type: YAML
-  design_folder: '$ThemeDir'
+  design_folder: '$ThemeDir/'
   public_access: false
 Injector:
   GreenFinder:
