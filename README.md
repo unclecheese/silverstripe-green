@@ -1,4 +1,4 @@
-<div style="text-align:center;"><img src="docs/green.png?raw=true" style="height:256px" /></div>
+<p align="center"><img src="docs/green.png?raw=true" style="height:128px" /></p>
 
 # SilverStripe Green
 
