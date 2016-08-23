@@ -13,6 +13,7 @@ Go green.
 ## Sound interesting?
 
 [Read the docs](docs/en/index.md). They're eco-friendly!
+[Watch the demo](https://vimeo.com/179834516). It's... solar powered.
 
 ## Installation
 `composer require unclecheese/silverstripe-green`
