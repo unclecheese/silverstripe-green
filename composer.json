@@ -13,6 +13,7 @@
 	},
 	"require": {
 		"silverstripe/framework": "~3.1",
-		"unclecheese/silverstripe-serialised-dbfields": "dev-master"
+		"unclecheese/silverstripe-serialised-dbfields": "dev-master",
+		"symfony/finder": "^3.1"
 	}
 }
