@@ -19,7 +19,7 @@ Go green.
 `composer require unclecheese/silverstripe-green`
 
 ## Dependencies
-* [unclecheese/silverstripe-serialised-dbfields](http://github.com/unclecheese/silverstripe-serialised-db-fields)
+* [unclecheese/silverstripe-serialised-dbfields](http://github.com/unclecheese/silverstripe-serialised-dbfields)
 * SilverStripe >= 3.1
 
 ## Tests
