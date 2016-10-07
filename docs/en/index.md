@@ -84,6 +84,13 @@ _themes/my-theme/green/my-awesome-design/index.ss_
 </ul>
 ```
 
+#### Using a custom "main" template
+
+In most cases, the `index.ss` file will serve as the `$Layout` template, with `templates/Page.ss` serving as the main template. To override this behaviour, you can either:
+
+* If the main template is **custom to this design**, you can create `main.ss` and `layout.ss` (instead of just `index.ss`)
+* Or, if the main template is **already in the theme**, you can set `main_template: SomeExistingTemplate.ss` in your `config.yml` file.
+
 ### Supply some content
 
 There are two ways we can feed content to the template. The simplest (and perhaps the most austere) way of providing content is through a YAML or JSON file in the design module.

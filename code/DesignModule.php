@@ -81,14 +81,36 @@ class DesignModule
 
 
     /**
-     * Gets the absolute path to the template file
+     * Gets the absolute path to the layout template file
      * @return string
      */
-    public function getTemplateFile()
+    public function getLayoutTemplateFile()
     {
-    	return $this->getPath() . '/index.ss';	
+    	$layout = $this->getPath() . '/layout.ss';
+
+    	return file_exists($layout) ? $layout : $this->getPath() . '/index.ss';
     }
 
+
+    /**
+     * Gets the absolute path to the main template file
+     * @return string
+     */
+    public function getMainTemplateFile()
+    {
+    	$main = $this->getPath() . '/main.ss';
+
+    	if(file_exists($main)) {
+    		return $main;
+    	}
+
+    	$main = (string) $this->getConfiguration()->main_template;
+    	if($main) {
+    		return SSViewer::getTemplateFileByType($main, 'main');
+    	}
+
+    	return false;
+    }
 
     /**
      * Gets the contents of the design template
@@ -97,7 +119,7 @@ class DesignModule
      */
     public function getTemplateContents()
     {
-        $path = $this->getTemplateFile();
+        $path = $this->getLayoutTemplateFile();
         if (!file_exists($path)) {
             throw new Exception("File index.ss does not exist in {$this->getName()}");
         }

@@ -65,7 +65,12 @@ class Controller extends ContentController
 
 		$module->loadRequirements();
 		$viewer = $this->getViewer($action);					
-		$viewer->setTemplateFile('Layout', $module->getTemplateFile());
+		$viewer->setTemplateFile('Layout', $module->getLayoutTemplateFile());
+
+		$main = $module->getMainTemplateFile();
+		if($main) {
+			$viewer->setTemplateFile('main', $main);
+		}
 		
 		return $viewer->process($this->customise($data));
 	}

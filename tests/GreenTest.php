@@ -82,12 +82,40 @@ class GreenTest extends SapphireTest
 
 		$this->assertEquals(
 			$this->getFileTestPath('index.ss'),
-			$designModule->getTemplateFile()
+			$designModule->getLayoutTemplateFile()
 		);
 
 		$this->assertEquals(
 			file_get_contents($this->getFileTestPath('index.ss')),
 			$designModule->getTemplateContents()
+		);
+
+		$this->fs->dumpFile(
+			$this->getFileTestPath('main.ss'),
+			'test'
+		);
+
+		$this->assertEquals(
+			$this->getFileTestPath('main.ss'),
+			$designModule->getMainTemplateFile()
+		);
+
+		$this->fs->remove(
+			$this->getFileTestPath('main.ss')
+		);
+
+		$this->fs->remove(
+			$this->getFileTestPath('index.ss')
+		);
+
+		$this->fs->dumpFile(
+			$this->getFileTestPath('layout.ss'),
+			'test'
+		);
+
+		$this->assertEquals(
+			$this->getFileTestPath('layout.ss'),
+			$designModule->getLayoutTemplateFile()
 		);
 	}
 
@@ -306,6 +334,31 @@ YAML;
 		$this->assertEquals(200, $response->getStatusCode());
 
 		$body = $response->getBody();		
+		$this->assertRegExp(
+			'/Title\: test title/',
+			$body
+		);
+
+		$this->assertRegExp(
+			'/Date\: 01\/01\/2015/',
+			$body
+		);
+
+		$this->fs->dumpFile(
+			$this->getFileTestPath('main.ss'),
+			"___MAIN___\n\$Layout"
+		);
+
+		$response = Director::test('test-url');
+		$this->assertEquals(200, $response->getStatusCode());
+
+		$body = $response->getBody();		
+
+		$this->assertEquals(
+			'___MAIN___',
+			substr($body, 0, 10)
+		);
+
 		$this->assertRegExp(
 			'/Title\: test title/',
 			$body
