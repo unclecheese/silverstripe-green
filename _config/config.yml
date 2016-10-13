@@ -13,3 +13,6 @@ LeftAndMain:
     - silverstripe-green/javascript/green-cms.js
   extra_requirements_css:
     - silverstripe-green/css/green-cms.css
+UncleCheese\SerialisedDBFields\SerialisedDBField:
+  extensions:
+    - UncleCheese\Green\SerialisedDBFieldExtension

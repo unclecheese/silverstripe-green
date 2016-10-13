@@ -55,6 +55,16 @@ class GreenTest extends SapphireTest
 		$this->assertTrue($dbObj->obj('Date') instanceof Date);
 	}
 
+
+	public function testDataSourceImages()
+	{
+		$dataSource = $this->createDataSource();
+		$dataObj = $dataSource->toDBObject();
+		$this->assertTrue(
+			$dataObj->obj('SomeImage') instanceof Image_Cached
+		);
+	}
+
 	public function testDataSourceGetters()
 	{
 		$dataSource = $this->createDataSource();
