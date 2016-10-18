@@ -109,6 +109,17 @@ Items:
 
 Alernatively, if you want to be able to edit the content in the CMS, you can omit this file.
 
+### Auto-populating content
+
+Green can parse your `index.ss` template for variables and auto-create content using a task:
+
+`$ framework/sake dev/tasks/GreenTemplateParserTask module=my-design-module`
+
+This task looks at both variables and blocks defined in your template, converts them into the appropriate structure in JSON or YAML, and assigns placeholder content to them.
+
+This feature is also available when editing YAML in the CMS. Just click (Load from template) above the code editor, and it will populate the editor automatically.
+
+
 ## Insert the page type into the site tree
 
 In the CMS, create a new page of type `MyGreenPageType` (or whatever you called it). Click on the *Content & Design* tab.

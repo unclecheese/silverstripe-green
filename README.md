@@ -20,6 +20,8 @@ Go green.
 
 ## Dependencies
 * [unclecheese/silverstripe-serialised-dbfields](http://github.com/unclecheese/silverstripe-serialised-db-fields)
+* [unclecheese/silverstripe-reflection-templates](https://github.com/unclecheese/silverstripe-reflection-templates)
+* [unclecheese/silverstripe-mock-dataobjects](https://github.com/unclecheese/silverstripe-mock-dataobjects)
 * SilverStripe >= 3.1
 
 ## Tests

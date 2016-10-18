@@ -14,7 +14,10 @@
 	"require": {
 		"silverstripe/framework": "~3.1",		
 		"unclecheese/silverstripe-serialised-dbfields": "dev-master",
-		"symfony/finder": "^3.1"		
+		"symfony/finder": "^3.1",
+		"symfony/filesystem": "^3.1",
+		"unclecheese/reflection-templates": "dev-master",
+		"unclecheese/mock-dataobjects": "^1.0"			
 	},
 	"require-dev": {
 		"symfony/filesystem": "~3.1"

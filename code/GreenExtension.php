@@ -93,11 +93,12 @@ class GreenExtension extends DataExtension
         } else {
         	$button = "";
         	if(!$this->owner->TemplateData) {
-				$button = sprintf(
-					'<a class="template-parse-button" href="%s">%s</a>',
-					'admin/green',
+				$button = "(".sprintf(
+					'<a class="template-parse-button" href="admin/green?id=%s&class=%s">%s</a>',
+					$this->owner->ID,
+					$this->owner->class,
 					_t('Green.LOAD_TEMPLATE','Load from template')
-				);
+				).")";
 			}
 
             $tab->push(

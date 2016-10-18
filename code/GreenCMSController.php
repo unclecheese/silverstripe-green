@@ -3,11 +3,19 @@
 namespace UncleCheese\Green;
 
 use \SS_HTTPRequest;
+use \SS_HTTPResponse;
 use \Controller;
-use \Director;
 use \Permission;
 use \CMSMain;
+use \Member;
+use \DataList;
 
+/**
+ * A controller that stores endpoints needed for UI features in the CMS
+ *
+ * @package  silverstripe-green
+ * @author  Uncle Cheese <unclecheese@leftandmain.com>
+ */
 class GreenCMSController extends CMSMain
 {
 
@@ -15,21 +23,29 @@ class GreenCMSController extends CMSMain
 
 	private static $required_permission_codes = 'CMS_ACCESS_CMSMain';
 
-	public function index(SS_HTTPRequest $r)
+	public function index($r)
 	{
-		$page = Director::get_current_page();
+		if(!$r->getVar('class') || !$r->getVar('id')) {
+			return $this->httpError(400);
+		}
+
+		$obj = DataList::create(
+			$r->getVar('class'),
+			$r->getVar('id')
+		)->first();
+			
 		$controller = Controller::curr();
 		$parser = TemplateParser::create();
 
-		if(!$page || !$page->canEdit()) {
+		if(!$obj || !$obj->canEdit(Member::currentUser())) {
 			return $controller->httpError(403, 'Cannot edit this page');
 		}
 
-		if(!$page->hasExtension('GreenExtension')) {
+		if(!$obj->hasExtension('GreenExtension')) {
 			return $controller->httpError(400, 'This page does not have the Green extension');
 		}
 
-		$module = $page->getModule();
+		$module = $obj->getModule();
 
 		if(!$module) {
 			return $controller->httpError(400, 'This page has no design module selected');
@@ -38,7 +54,7 @@ class GreenCMSController extends CMSMain
 		$dataType = strtolower(preg_replace(
 			'/Field$/',
 			'',
-			$page->dbObject('TemplateData')->class
+			$obj->dbObject('TemplateData')->class
 		));
 
 		$parser->parse($module->getLayoutTemplateFile());

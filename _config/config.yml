@@ -5,9 +5,6 @@ UncleCheese\Green\Green:
   default_data_type: YAML
   design_folder: '$ThemeDir/'
   public_access: false
-Director:
-  rules:
-
 Injector:
   GreenFinder:
     class: Symfony\Component\Finder\Finder

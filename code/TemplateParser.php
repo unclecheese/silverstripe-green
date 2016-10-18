@@ -8,15 +8,37 @@ use \ViewableData;
 use \Injector;
 use \i18n;
 
+/**
+ * Parses a template using ReflectionTemplate and returns mock data
+ * in serialised JSON or YAML
+ *
+ * @package  UncleCheese\Green
+ * @author  Uncle Cheese <unclecheese@leftandmain.com>
+ */
 class TemplateParser extends \Object
 {
 
+	/**
+	 * The template data
+	 * @var array
+	 */
 	protected $data = [];
 
+	/**	 
+	 * @var ReflectionTemplate
+	 */
 	protected $parser;
 
+	/**
+	 * Creates the mock data
+	 * @var Faker
+	 */
 	protected $faker;
 
+	/**
+	 * Constructor
+	 * @param RelctionTemplate $parser
+	 */
 	public function __construct($parser)
 	{
 		$this->parser = $parser;
@@ -25,6 +47,10 @@ class TemplateParser extends \Object
 		parent::__construct();
 	}
 
+	/**
+	 * Parse the template
+	 * @param  string $path Path to the template
+	 */
 	public function parse($path)
 	{
 		$data = [];
@@ -44,11 +70,16 @@ class TemplateParser extends \Object
 		$this->data = $data;		
 	}
 
+	/**
+	 * Gets the results in JSON or YAML format
+	 * @param  string $format 
+	 * @return string
+	 */
 	public function getResults($format = 'yaml')
 	{
 		$format = strtolower($format);
 		if($format === 'yaml') {
-			return Yaml::dump($this->data, 4);
+			return Yaml::dump($this->data, 4, 2);
 		}
 
 		if($format === 'json') {
@@ -58,6 +89,11 @@ class TemplateParser extends \Object
 		throw new \Exception("Invalid data format: $format");
 	}
 
+	/**
+	 * Processes template vars
+	 * @param  array $vars 
+	 * @param  The total collection of template data &$data
+	 */
 	protected function processVars($vars, &$data)
 	{	
 		$defaultDataType = ViewableData::config()->default_cast;
@@ -74,6 +110,11 @@ class TemplateParser extends \Object
 		}		
 	}
 
+	/**
+	 * Processes template blocks
+	 * @param  array $blocks 
+	 * @param  The total collection of template data &$data
+	 */
 	protected function processBlocks($blocks, &$data)
 	{
 		foreach($blocks as $block) {						
@@ -92,7 +133,6 @@ class TemplateParser extends \Object
 			if(!empty($children)) {
 				$this->processBlocks($children, $data[$block->getName()]);
 			}
-		}      		
-
+		}
 	}
 }

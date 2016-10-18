@@ -4,6 +4,12 @@ use UncleCheese\Green\TemplateParser;
 use UncleCheese\Green\Green;
 use Symfony\Component\Filesystem\Filesystem;
 
+/**
+ * A task that populates yaml files from a template
+ *
+ * @package  UncleCheese\Green
+ * @author  Uncle Cheese <unclecheese@leftandmain.com>
+ */
 class GreenTemplateParserTask extends BuildTask
 {
 
