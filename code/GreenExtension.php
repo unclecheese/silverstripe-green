@@ -91,13 +91,24 @@ class GreenExtension extends DataExtension
                 )
             );
         } else {
+        	$button = "";
+        	if(!$this->owner->TemplateData) {
+				$button = sprintf(
+					'<a class="template-parse-button" href="%s">%s</a>',
+					'admin/green',
+					_t('Green.LOAD_TEMPLATE','Load from template')
+				);
+			}
+
             $tab->push(
                 Injector::inst()->create("{$dataType}Editor")
                     ->setName('TemplateData')
-                    ->setTitle("This module does not have its own data source file. You can create <strong>$dataType</strong> data for the design below.")
+                    ->setTitle("This module does not have its own data source file. You can create <strong>$dataType</strong> data for the design below. $button")
                     ->setRows(30)
             );
         }
+
+        $c = $fields->dataFieldByName('TemplateData');
     }
 
 

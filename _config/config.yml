@@ -5,9 +5,20 @@ UncleCheese\Green\Green:
   default_data_type: YAML
   design_folder: '$ThemeDir/'
   public_access: false
+Director:
+  rules:
+
 Injector:
   GreenFinder:
     class: Symfony\Component\Finder\Finder
+  GreenTemplateParserService:
+    class: ReflectionTemplate
+  UncleCheese\Green\TemplateParser:
+    constructor:
+      0: %$GreenTemplateParserService
+  UncleCheese\Green\TemplateParseButton:
+    constructor:
+      0: %$UncleCheese\Green\TemplateParser      
 LeftAndMain:
   extra_requirements_javascript:
     - silverstripe-green/javascript/green-cms.js
