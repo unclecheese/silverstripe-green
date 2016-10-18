@@ -18,5 +18,8 @@
 	},
 	"require-dev": {
 		"symfony/filesystem": "~3.1"
-	}
+	},
+	"suggest": {
+		"unclecheese/silverstripe-green-addons": "Provides additional functionality for content and code generation."
+    }	
 }
