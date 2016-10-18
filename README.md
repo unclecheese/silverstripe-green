@@ -24,6 +24,8 @@ Go green.
 * [unclecheese/silverstripe-mock-dataobjects](https://github.com/unclecheese/silverstripe-mock-dataobjects)
 * SilverStripe >= 3.1
 
+## Recommended addons
+* [unclecheese/silverstripe-green-addons](https://github.com/unclecheese/silverstripe-green-addons) 
 ## Tests
 `framework sake dev/tests/GreenTest`
 
